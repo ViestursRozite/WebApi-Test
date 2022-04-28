@@ -20,5 +20,4 @@
         public bool HasEmptyFields { get; set; }
         public object? Extras { get; set; }
     }
-
 }

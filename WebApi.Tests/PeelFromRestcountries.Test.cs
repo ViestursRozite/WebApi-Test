@@ -18,9 +18,9 @@ namespace WebApi.Tests
         public void PeelNationsEurope_Returns_Countries_Object_Array(JArray param1, Country[] expected)
         {
             //Arrange
-
             //Act
             var actual = Services.PeelFromRestcountries.ExpectV3Structure.PeelNationsEurope(param1);
+            
             //Assert
             Assert.Equal(expected.Length, actual.Length);
         }
@@ -30,9 +30,9 @@ namespace WebApi.Tests
         public void PeelMatchingJTokenNation_Peels_JToken(Country param1, JArray param2, JToken expected)
         {
             //Arrange
-
             //Act
             JToken? actual = Services.PeelFromRestcountries.ExpectV3Structure.PeelMatchingJTokenNation(param1, param2);
+            
             //Assert
             Assert.Equal(expected.GetType(), actual.GetType());
         }
@@ -42,9 +42,9 @@ namespace WebApi.Tests
         public void PeelMatchingJTokenNation_Peels_Correct_JToken(Country param1, JArray param2, JToken expected)
         {
             //Arrange
-
             //Act
             JToken? actual = Services.PeelFromRestcountries.ExpectV3Structure.PeelMatchingJTokenNation(param1, param2);
+            
             //Assert
             Assert.Equal(expected.SelectToken("name.common").ToString(), actual.SelectToken("name.common").ToString());
         }
@@ -63,6 +63,7 @@ namespace WebApi.Tests
             //Act
             Services.PeelFromRestcountries.ExpectV3Structure.SelectToEmptyFieldInCountry( 
                 Param1LinqExpr, actual, Param3JArr);
+            
             //Assert
             for (int i = 0; i < expected.Length; i++)
             {
@@ -151,5 +152,4 @@ namespace WebApi.Tests
             }
         }
     }
-
 }

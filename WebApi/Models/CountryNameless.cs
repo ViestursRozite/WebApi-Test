@@ -10,7 +10,6 @@
             Poppulation = poppulation;
         }
 
-
         public string NativeName { get; set; }
         public string[] Tld { get ; set ; }
         public double Area { get; set; }

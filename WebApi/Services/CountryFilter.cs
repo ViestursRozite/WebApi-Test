@@ -7,7 +7,6 @@ using WebApi.Models;
 using System.Linq;
 
 namespace WebApi.Services
-
 {
     public static class CountryFilter
     {
@@ -105,6 +104,5 @@ namespace WebApi.Services
                 return countries;
             }
         }
-
     }
 }

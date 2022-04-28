@@ -32,8 +32,6 @@ app.UseSwagger();
 
 app.UseSwaggerUI(options =>
 {
-    //var configObj = options.ConfigObject;
-    //configObj.
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi on .NET 6");
 });
 

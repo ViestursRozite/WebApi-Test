@@ -35,13 +35,13 @@ namespace WebApi.Controllers
                 var countries = CountryHolder.Get();
                 countries = CountryFilter.OrderByPoppulationDensity(countries);
                 countries = CountryFilter.ShortenArray(countries, 10);
-                //return biggest pop
+                //return densest pop
 
                 return countries;
             }
             else
             {
-                return null;//return error message
+                return null;//return something
             }
         }
 
@@ -50,7 +50,7 @@ namespace WebApi.Controllers
         {
             if (country == null)
             {
-                return null; // return how to use error page
+                return null;//return something
             }
             else
             {

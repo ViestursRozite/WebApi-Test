@@ -15,10 +15,9 @@ namespace WebApi.Tests
         public static void ShortenArray_Shortens_Country_Array(Country[] param1, int param2, Country[] expected)
         {
             //Arrange
-
             //Act
             var actual = Services.CountryFilter.ShortenArray(param1, param2);
-
+            
             //Assert
             for (int i = 0; i < expected.Length; i++)
             {
@@ -37,6 +36,7 @@ namespace WebApi.Tests
             //Arrange
             Country[] data = CreateTestArr();
             object actual;
+
             //Act
             try
             {
@@ -57,9 +57,9 @@ namespace WebApi.Tests
         public static void DropNotEncluded_Returns_A_Coppy_Where_Only_Included_Remain(Country[] param1, string[] param2, Country[] expected)
         {
             //Arrange
-
             //Act
             var actual = Services.CountryFilter.DropNotEncluded(param1, param2);
+            
             //Assert
             for (int i = 0; i < expected.Length; i++)
             {
@@ -78,9 +78,9 @@ namespace WebApi.Tests
             Country[] param1, Country[] expected)
         {
             //Arrange
-
             //Act
             var actual = Services.CountryFilter.OrderByPoppulation(param1);
+            
             //Assert
             for (int i = 0; i < expected.Length; i++)
             {
@@ -99,9 +99,9 @@ namespace WebApi.Tests
             Country[] param1, Country[] expected)
         {
             //Arrange
-
             //Act
             var actual = Services.CountryFilter.OrderByPoppulationDensity(param1);
+            
             //Assert
             for (int i = 0; i < expected.Length; i++)
             {
@@ -120,9 +120,9 @@ namespace WebApi.Tests
             bool param1, Country[] param2, Country[] expected)
         {
             //Arrange
-
             //Arrange
             var actual = Services.CountryFilter.Return10(param1, param2);
+            
             //Assert
             for (int i = 0; i < expected.Length; i++)
             {
@@ -308,30 +308,30 @@ namespace WebApi.Tests
             public IEnumerator<object[]> GetEnumerator()
             {
                 yield return new object[]
-                    {
-                        new Country[] {
-                        new Country("gggg", "gg", new string[] {"ggg" }, 111, 777, false),
-                        new Country("eeee", "ee", new string[] {"eee" }, 111, 555, false),
-                        new Country("hhhh", "hh", new string[] {"hhh" }, 111, 888, false),
-                        new Country("dddd", "dd", new string[] {"ddd" }, 111, 444, false),
-                        new Country("cccc", "cc", new string[] {"ccc" }, 111, 333, false),
-                        new Country("aaaa", "aa", new string[] {"aaa" }, 111, 111, false),
-                        new Country("ffff", "ff", new string[] {"fff" }, 111, 666, false),
-                        new Country("iiii", "ii", new string[] {"iii" }, 111, 999, false),
-                        new Country("bbbb", "bb", new string[] {"bbb" }, 111, 222, false)
-                        },
-                        new Country[] {
-                        new Country("iiii", "ii", new string[] {"iii" }, 111, 999, false),
-                        new Country("hhhh", "hh", new string[] {"hhh" }, 111, 888, false),
-                        new Country("gggg", "gg", new string[] {"ggg" }, 111, 777, false),
-                        new Country("ffff", "ff", new string[] {"fff" }, 111, 666, false),
-                        new Country("eeee", "ee", new string[] {"eee" }, 111, 555, false),
-                        new Country("dddd", "dd", new string[] {"ddd" }, 111, 444, false),
-                        new Country("cccc", "cc", new string[] {"ccc" }, 111, 333, false),
-                        new Country("bbbb", "bb", new string[] {"bbb" }, 111, 222, false),
-                        new Country("aaaa", "aa", new string[] {"aaa" }, 111, 111, false)
-                        }
-                    };
+                {
+                    new Country[] {
+                    new Country("gggg", "gg", new string[] {"ggg" }, 111, 777, false),
+                    new Country("eeee", "ee", new string[] {"eee" }, 111, 555, false),
+                    new Country("hhhh", "hh", new string[] {"hhh" }, 111, 888, false),
+                    new Country("dddd", "dd", new string[] {"ddd" }, 111, 444, false),
+                    new Country("cccc", "cc", new string[] {"ccc" }, 111, 333, false),
+                    new Country("aaaa", "aa", new string[] {"aaa" }, 111, 111, false),
+                    new Country("ffff", "ff", new string[] {"fff" }, 111, 666, false),
+                    new Country("iiii", "ii", new string[] {"iii" }, 111, 999, false),
+                    new Country("bbbb", "bb", new string[] {"bbb" }, 111, 222, false)
+                    },
+                    new Country[] {
+                    new Country("iiii", "ii", new string[] {"iii" }, 111, 999, false),
+                    new Country("hhhh", "hh", new string[] {"hhh" }, 111, 888, false),
+                    new Country("gggg", "gg", new string[] {"ggg" }, 111, 777, false),
+                    new Country("ffff", "ff", new string[] {"fff" }, 111, 666, false),
+                    new Country("eeee", "ee", new string[] {"eee" }, 111, 555, false),
+                    new Country("dddd", "dd", new string[] {"ddd" }, 111, 444, false),
+                    new Country("cccc", "cc", new string[] {"ccc" }, 111, 333, false),
+                    new Country("bbbb", "bb", new string[] {"bbb" }, 111, 222, false),
+                    new Country("aaaa", "aa", new string[] {"aaa" }, 111, 111, false)
+                    }
+                };
             }
             IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
         }
@@ -341,44 +341,44 @@ namespace WebApi.Tests
             public IEnumerator<object[]> GetEnumerator()
             {
                 yield return new object[]
+                {
+                    new Country[]
                     {
-                        new Country[]
-                        {
-                            new Country("bbbb", "bb", new string[] {"bbb" }, 22, 222, false),
-                            new Country("gggg", "gg", new string[] {"ggg" }, 77, 777, false)
-                        },
-                        new Country[]
-                        {
-                            new Country("gggg", "gg", new string[] {"ggg" }, 77, 777, false),
-                            new Country("bbbb", "bb", new string[] {"bbb" }, 22, 222, false)
-                        }
-                    };
+                        new Country("bbbb", "bb", new string[] {"bbb" }, 22, 222, false),
+                        new Country("gggg", "gg", new string[] {"ggg" }, 77, 777, false)
+                    },
+                    new Country[]
+                    {
+                        new Country("gggg", "gg", new string[] {"ggg" }, 77, 777, false),
+                        new Country("bbbb", "bb", new string[] {"bbb" }, 22, 222, false)
+                    }
+                };
                 yield return new object[]
+                {
+                    new Country[]
                     {
-                        new Country[]
-                        {
-                            new Country("dddd", "dd", new string[] {"ddd" }, 44, 444, false),
-                            new Country("hhhh", "hh", new string[] {"hhh" }, 88, 888, false),
-                            new Country("iiii", "ii", new string[] {"iii" }, 99, 999, false),
-                            new Country("gggg", "gg", new string[] {"ggg" }, 77, 777, false),
-                            new Country("bbbb", "bb", new string[] {"bbb" }, 22, 222, false),
-                            new Country("cccc", "cc", new string[] {"ccc" }, 33, 333, false),
-                            new Country("eeee", "ee", new string[] {"eee" }, 55, 555, false),
-                            new Country("ffff", "ff", new string[] {"fff" }, 66, 666, false),
-                            new Country("aaaa", "aa", new string[] {"aaa" }, 11, 111, false)
-                        },
-                        new Country[] {
-                            new Country("iiii", "ii", new string[] {"iii" }, 99, 999, false), 
-                            new Country("hhhh", "hh", new string[] {"hhh" }, 88, 888, false),
-                            new Country("gggg", "gg", new string[] {"ggg" }, 77, 777, false),
-                            new Country("ffff", "ff", new string[] {"fff" }, 66, 666, false),
-                            new Country("eeee", "ee", new string[] {"eee" }, 55, 555, false),
-                            new Country("dddd", "dd", new string[] {"ddd" }, 44, 444, false),
-                            new Country("cccc", "cc", new string[] {"ccc" }, 33, 333, false),
-                            new Country("bbbb", "bb", new string[] {"bbb" }, 22, 222, false),
-                            new Country("aaaa", "aa", new string[] {"aaa" }, 11, 111, false)
-                        }
-                    };
+                        new Country("dddd", "dd", new string[] {"ddd" }, 44, 444, false),
+                        new Country("hhhh", "hh", new string[] {"hhh" }, 88, 888, false),
+                        new Country("iiii", "ii", new string[] {"iii" }, 99, 999, false),
+                        new Country("gggg", "gg", new string[] {"ggg" }, 77, 777, false),
+                        new Country("bbbb", "bb", new string[] {"bbb" }, 22, 222, false),
+                        new Country("cccc", "cc", new string[] {"ccc" }, 33, 333, false),
+                        new Country("eeee", "ee", new string[] {"eee" }, 55, 555, false),
+                        new Country("ffff", "ff", new string[] {"fff" }, 66, 666, false),
+                        new Country("aaaa", "aa", new string[] {"aaa" }, 11, 111, false)
+                    },
+                    new Country[] {
+                        new Country("iiii", "ii", new string[] {"iii" }, 99, 999, false), 
+                        new Country("hhhh", "hh", new string[] {"hhh" }, 88, 888, false),
+                        new Country("gggg", "gg", new string[] {"ggg" }, 77, 777, false),
+                        new Country("ffff", "ff", new string[] {"fff" }, 66, 666, false),
+                        new Country("eeee", "ee", new string[] {"eee" }, 55, 555, false),
+                        new Country("dddd", "dd", new string[] {"ddd" }, 44, 444, false),
+                        new Country("cccc", "cc", new string[] {"ccc" }, 33, 333, false),
+                        new Country("bbbb", "bb", new string[] {"bbb" }, 22, 222, false),
+                        new Country("aaaa", "aa", new string[] {"aaa" }, 11, 111, false)
+                    }
+                };
             }
             IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
         }
@@ -437,5 +437,3 @@ namespace WebApi.Tests
         }
     }
 }
-
-    
